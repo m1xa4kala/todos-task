@@ -6,7 +6,7 @@ import {
 	InputRightElement,
 	useColorModeValue,
 } from '@chakra-ui/react'
-import PlusIcon from '../../Icons/PlusIcon'
+import { AddIcon } from '@chakra-ui/icons'
 
 const TodosInput: React.FC = () => {
 	const borderColor = useColorModeValue('blackAlpha.200', 'whiteAlpha.100')
@@ -20,17 +20,18 @@ const TodosInput: React.FC = () => {
 				borderBottomColor={borderColor}
 				pr="4.5rem"
 				placeholder="What needs to be done?"
+				required
 			/>
-			<InputRightElement pr={2} width="40px">
+			<InputRightElement pr={2}>
 				<IconButton
 					_hover={{
 						background: 'none',
-						transform: 'scale(1.1)',
+						transform: 'scale(1.2)',
 					}}
+					_active={{ background: 'none' }}
 					background="none"
-					width="40px"
 					aria-label="Add todo"
-					icon={<PlusIcon />}
+					icon={<AddIcon boxSize={6} color="green.300" />}
 				/>
 			</InputRightElement>
 		</InputGroup>
