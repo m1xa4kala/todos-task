@@ -1,14 +1,11 @@
 import React from 'react'
 import { List, Text } from '@chakra-ui/react'
-import { ITodo } from '../../models/todoModel'
 import TodoItem from './TodoItem/TodoItem'
+import { getAllTodos } from '../../store/selectors'
+import { useAppSelector } from '../../store'
 
 const TodosList: React.FC = () => {
-	const todos: ITodo[] = [
-		{ id: 1, title: 'Create app', completed: true },
-		{ id: 2, title: 'Create tests', completed: false },
-		{ id: 3, title: 'Complite tests', completed: false },
-		{ id: 4, title: 'Deploy app', completed: false },]
+	const todos = useAppSelector(state => getAllTodos(state))
 	if (todos.length)
 		return (
 			<List textAlign="start" px="2" pt="3" spacing={3}>
