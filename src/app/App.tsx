@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ChakraProvider, Box, VStack, Grid, theme } from '@chakra-ui/react'
 import { ColorModeSwitcher } from './ColorModeSwitcher'
-import Todos from './Pages/Todos'
+import Todos from '../Pages/Todos'
 const App: React.FC = () => (
 	<ChakraProvider theme={theme}>
 		<Box textAlign="center" fontSize="xl">
