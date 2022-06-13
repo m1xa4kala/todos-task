@@ -26,7 +26,7 @@ const TodosFooter: React.FC = () => {
 				</Text>
 			</Hide>
 			<TodosFilter />
-			<Button variant='ghost' fontSize="md" fontWeight="light" onClick={clearHandler}>
+			<Button variant='ghost' fontSize="md" fontWeight="light" onClick={clearHandler} data-testid='clear-completed-btn'>
 				Clear completed
 			</Button>
 		</Flex>

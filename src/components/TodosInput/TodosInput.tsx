@@ -47,6 +47,7 @@ const TodosInput: React.FC = () => {
 					background="none"
 					aria-label="Add todo"
 					icon={<AddIcon boxSize={6} color="green.300" />}
+					data-testid="add-button"
 				/>
 			</InputRightElement>
 		</InputGroup>

@@ -29,6 +29,7 @@ const RadioCard: React.FC<RadioProps> = (props) => {
 				}}
 				px={3}
 				py={2}
+				data-testid={`filter-${props.value}`}
 			>
 				{props.children}
 			</Box>

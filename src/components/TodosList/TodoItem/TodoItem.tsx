@@ -51,9 +51,10 @@ const TodoItem: React.FC<ITodoItemProps> = ({ todo }) => {
 						}
 						icon={
 							todo.completed ? (
-								<CheckIcon boxSize={5} color="green.300" />
+								<CheckIcon data-testid='check-icon' boxSize={5} color="green.300" />
 							) : undefined
 						}
+						data-testid='icon-button'
 					/>
 				</Circle>
 				<Text>{todo.title}</Text>
