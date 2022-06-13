@@ -1,8 +1,19 @@
 import React from 'react'
-import { Flex, Hide, Text } from '@chakra-ui/react'
+import { Button, Flex, Hide, Text } from '@chakra-ui/react'
 import TodosFilter from './FilterControl/TodosFilter'
+import { useAppDispatch, useAppSelector } from '../../store'
+import { clearCompleted } from '../../store/todosSlice'
+import { getActiveTodos } from '../../store/selectors'
 
 const TodosFooter: React.FC = () => {
+	const todos = useAppSelector((state) => getActiveTodos(state))
+
+	const dispatch = useAppDispatch()
+
+	const clearHandler = () => {
+		dispatch(clearCompleted())
+	}
+
 	return (
 		<Flex
 			alignItems="center"
@@ -11,13 +22,13 @@ const TodosFooter: React.FC = () => {
 		>
 			<Hide breakpoint="(max-width: 510px)">
 				<Text fontSize="md" fontWeight="light">
-					2 items left
+					{todos.length} items left
 				</Text>
 			</Hide>
 			<TodosFilter />
-			<Text fontSize="md" fontWeight="light">
+			<Button variant='ghost' fontSize="md" fontWeight="light" onClick={clearHandler}>
 				Clear completed
-			</Text>
+			</Button>
 		</Flex>
 	)
 }

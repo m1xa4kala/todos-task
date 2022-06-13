@@ -1,16 +1,33 @@
 import { RootState } from './index'
-import { createDraftSafeSelector } from '@reduxjs/toolkit'
+import { createDraftSafeSelector, createSelector } from '@reduxjs/toolkit'
+import { Filter } from './todosSlice'
 const selectSelf = (state: RootState) => state
 
 export const getAllTodos = createDraftSafeSelector(
 	selectSelf,
 	(state) => state.todos.todos
 )
-export const getActiveTodos = createDraftSafeSelector(
-    selectSelf,
-    (state) => state.todos.todos.filter(todo => todo.completed === false)
+export const getCurrentFilter = createDraftSafeSelector(
+	selectSelf,
+	(state) => state.todos.currentFilter
 )
-export const getComplitedTodos = createDraftSafeSelector(
-    selectSelf,
-    (state) => state.todos.todos.filter(todo => todo.completed === true)
+
+export const getFilteredTodos = createSelector(
+	[getAllTodos, getCurrentFilter],
+	(todos, filter) => {
+		switch (filter) {
+			case Filter.ALL:
+				return todos
+			case Filter.ACTIVE:
+				return todos.filter((todo) => todo.completed === false)
+			case Filter.COMPLITED:
+				return todos.filter((todo) => todo.completed === true)
+			default:
+				break
+		}
+	}
+)
+
+export const getActiveTodos = createSelector(getAllTodos, (todos) =>
+	todos.filter((todo) => todo.completed === false)
 )

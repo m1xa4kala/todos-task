@@ -1,8 +1,5 @@
-import React, {
-	ChangeEventHandler,
-	useId,
-	useState,
-} from 'react'
+import React, { ChangeEventHandler, useState } from 'react'
+import { v1 } from 'uuid'
 import {
 	IconButton,
 	Input,
@@ -18,12 +15,11 @@ const TodosInput: React.FC = () => {
 	const borderColor = useColorModeValue('blackAlpha.200', 'whiteAlpha.100')
 	const dispatch = useAppDispatch()
 	const [title, setTitle] = useState<string>('')
-	const id = useId()
 	const inputHandler: ChangeEventHandler<HTMLInputElement> = (event) =>
 		setTitle(event.target.value)
 
-	const addTodoHandler = () =>{
-		dispatch(addTodo({ id: id, title: title, completed: false }))
+	const addTodoHandler = () => {
+		dispatch(addTodo({ id: v1(), title: title, completed: false }))
 		setTitle('')
 	}
 

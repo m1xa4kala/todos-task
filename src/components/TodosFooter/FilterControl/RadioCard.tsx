@@ -4,6 +4,7 @@ import React from 'react'
 const RadioCard: React.FC<RadioProps> = (props) => {
 	const { getInputProps, getCheckboxProps } = useRadio(props)
 	const borderColor = useColorModeValue('blackAlpha.200', 'whiteAlpha.100')
+	const hoverColor = useColorModeValue('gray.100', 'whiteAlpha.200')
 	const input = getInputProps()
 	const checkbox = getCheckboxProps()
 
@@ -12,8 +13,8 @@ const RadioCard: React.FC<RadioProps> = (props) => {
 			<input {...input} />
 			<Box
 				{...checkbox}
-                fontWeight='light'
-                fontSize='md'
+				fontWeight="light"
+				fontSize="md"
 				cursor="pointer"
 				borderRadius="md"
 				_checked={{
@@ -22,6 +23,9 @@ const RadioCard: React.FC<RadioProps> = (props) => {
 				}}
 				_focus={{
 					boxShadow: 'outline',
+				}}
+				_hover={{
+					backgroundColor: hoverColor,
 				}}
 				px={3}
 				py={2}

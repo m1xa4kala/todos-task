@@ -1,5 +1,5 @@
-import { Box, Heading, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
+import { Box, Heading, useColorModeValue } from '@chakra-ui/react'
 import TodosFooter from '../components/TodosFooter/TodosFooter'
 import TodosInput from '../components/TodosInput/TodosInput'
 import TodosList from '../components/TodosList/TodosList'
@@ -15,7 +15,7 @@ const Todos: React.FC = () => {
 			<Box boxShadow="xl" borderColor={borderColor} borderWidth="thin">
 				<TodosInput />
 				<TodosList />
-                <TodosFooter/>
+				<TodosFooter />
 			</Box>
 		</>
 	)
