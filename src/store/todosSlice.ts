@@ -7,7 +7,7 @@ export enum Filter {
 	COMPLITED = 'Complited',
 }
 
-interface ITodosState {
+export interface ITodosState {
 	currentFilter: Filter
 	todos: ITodo[]
 }
