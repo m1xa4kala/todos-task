@@ -20,7 +20,7 @@ export const getFilteredTodos = createSelector(
 				return todos
 			case Filter.ACTIVE:
 				return todos.filter((todo) => todo.completed === false)
-			case Filter.COMPLITED:
+			case Filter.COMPLETED:
 				return todos.filter((todo) => todo.completed === true)
 			default:
 				break

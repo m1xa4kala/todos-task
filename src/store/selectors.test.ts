@@ -28,9 +28,9 @@ describe('selectors tests', () => {
 	it('get current filter work', () => {
 		expect(
 			getCurrentFilter({
-				todos: { todos: [], currentFilter: Filter.COMPLITED },
+				todos: { todos: [], currentFilter: Filter.COMPLETED },
 			})
-		).toBe(Filter.COMPLITED)
+		).toBe(Filter.COMPLETED)
 	})
 	it('get filtered todos work', () => {
 		expect(
@@ -40,7 +40,7 @@ describe('selectors tests', () => {
 						{ id: '1', title: 'test todo1', completed: true },
 						{ id: '2', title: 'test todo2', completed: false },
 					],
-					currentFilter: Filter.COMPLITED,
+					currentFilter: Filter.COMPLETED,
 				},
 			})
 		).toStrictEqual([{ id: '1', title: 'test todo1', completed: true }])

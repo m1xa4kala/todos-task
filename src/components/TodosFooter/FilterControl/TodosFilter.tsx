@@ -5,7 +5,7 @@ import { Filter, setCurrentFilter } from '../../../store/todosSlice'
 import { useAppDispatch } from '../../../store'
 
 const TodosFilter: React.FC = () => {
-	const options = [Filter.ALL, Filter.ACTIVE, Filter.COMPLITED]
+	const options = [Filter.ALL, Filter.ACTIVE, Filter.COMPLETED]
 	const dispatch = useAppDispatch()
 	const { getRootProps, getRadioProps } = useRadioGroup({
 		name: 'todos',

@@ -4,7 +4,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 export enum Filter {
 	ALL = 'All',
 	ACTIVE = 'Active',
-	COMPLITED = 'Complited',
+	COMPLETED = 'Completed',
 }
 
 export interface ITodosState {
