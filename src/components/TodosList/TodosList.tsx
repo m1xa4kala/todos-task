@@ -10,7 +10,12 @@ const TodosList: React.FC = () => {
 		return (
 			<List textAlign="start" px="2" pt="3" spacing={3}>
 				{todos.map((todo) => {
-					return <TodoItem key={todo.id} todo={todo} />
+					return (
+						<TodoItem
+							key={todo.id}
+							todo={todo}
+						/>
+					)
 				})}
 			</List>
 		)
